@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins",sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,blue,red);
+    padding: 10px;
+}
+.Groccery-app{
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.Groccery-app h2{
+    color: green;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.Groccery-app h2 img{
+    width: 30px;
+    margin-left: 20px;
+}
+.items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: cyan;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px
+    ;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: orange;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+
+
+}
