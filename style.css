@@ -67,9 +67,11 @@ ul li{
     list-style: none;
     font-size: 17px;
     padding:12px 8px 12px 50px ;
+    padding-right: 110px; /* room for edit/remove buttons */
     user-select: none;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
 }
 
 ul li::before{
@@ -85,27 +87,47 @@ ul li::before{
     left: 8px;
 }
 
-ul li.checked{
-    color: #555;
-    text-decoration: line-through;
-}
+
+
 ul li.checked::before{
     background-image: url(images/checked.png);
 }
 
-ul li span{
+ul li.checked .item-text{
+    text-decoration: line-through;
+    color: #555;
+}
+
+ul li .item-text{
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+ul li .edit,
+ul li .remove{
     position: absolute;
-    right: 0;
     top: 5px;
     width: 40px;
     height: 40px;
-    font: size 22px;
+    font-size: 18px;
     color: #555 ;
     line-height: 40px;
     text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
 }
 
-ul li span:hover{
+ul li .remove{
+    right: 0;
+}
+
+ul li .edit{
+    right: 48px;
+}
+
+ul li .edit:hover,
+ul li .remove:hover{
     background: #eee;
 }
 
