@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: cyan;
+    background: aqua;
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
@@ -45,10 +45,9 @@ input{
     flex: 1;
     border: none;
     outline: none;
-    background: transparent;
+    background: aqua;
     padding: 10px;
-    font-weight: 14px
-    ;
+    font-weight: 14px;
 }
 
 button{
@@ -93,3 +92,20 @@ ul li.checked{
 ul li.checked::before{
     background-image: url(images/checked.png);
 }
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font: size 22px;
+    color: #555 ;
+    line-height: 40px;
+    text-align: center;
+}
+
+ul li span:hover{
+    background: #eee;
+}
+
