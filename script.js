@@ -1,6 +1,18 @@
 const inputbox = document.getElementById('input');
 const listContainer = document.getElementById('list-container');
 
+function saveData() {
+    localStorage.setItem('groceryList', listContainer.innerHTML);
+}
+
+function loadData() {
+    const data = localStorage.getItem('groceryList');
+    if (data) {
+        listContainer.innerHTML = data;
+    }
+}
+
+
 function addTask(){
     if(inputbox.value ==""){
         alert("enter value")
@@ -25,8 +37,12 @@ function addTask(){
         li.appendChild(removeSpan);
 
         listContainer.append(li);
+
+        saveData();
     }
     inputbox.value=""
+
+
 }
 
 listContainer.addEventListener('click',function(e){
@@ -35,6 +51,7 @@ listContainer.addEventListener('click',function(e){
     if(target.classList && target.classList.contains('remove')){
         // Remove the item
         target.parentElement.remove();
+         saveData();
     } else if (target.classList && target.classList.contains('edit')){
         // Edit the item text
         const textSpan = target.parentElement.querySelector('.item-text');
@@ -44,6 +61,7 @@ listContainer.addEventListener('click',function(e){
             const trimmed = newText.trim();
             if(trimmed !== ''){
                 textSpan.textContent = trimmed;
+                saveData();
             } else {
                 alert('Item cannot be empty');
             }
@@ -52,7 +70,9 @@ listContainer.addEventListener('click',function(e){
         // Toggle checked state
         const li = (target.tagName === 'LI') ? target : target.parentElement;
         li.classList.toggle('checked');
+         saveData();
     }
 
 }, false);
 
+loadData();
